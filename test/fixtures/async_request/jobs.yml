@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  worker: MyString
+  status: 1
+  response: MyText
+  uid: MyString
+  params: MyText
+
+two:
+  worker: MyString
+  status: 1
+  response: MyText
+  uid: MyString
+  params: MyText
