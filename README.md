@@ -1,5 +1,5 @@
 # AsyncRequest
-[![Code Climate](https://codeclimate.com/github/mdesanti/async-requests/badges/gpa.svg)](https://codeclimate.com/github/mdesanti/async-requests)[![Test Coverage](https://codeclimate.com/github/mdesanti/async-requests/badges/coverage.svg)](https://codeclimate.com/github/mdesanti/async-requests/coverage)
+[![Code Climate](https://codeclimate.com/github/mdesanti/async-requests/badges/gpa.svg)](https://codeclimate.com/github/mdesanti/async-requests)[![Test Coverage](https://codeclimate.com/github/mdesanti/async-requests/badges/coverage.svg)](https://codeclimate.com/github/mdesanti/async-requests/coverage)[![Build Status](https://travis-ci.org/mdesanti/async-requests.svg?branch=master)](https://travis-ci.org/mdesanti/async-requests)
 
 ### Summary
 At [Wolox](http://www.wolox.com.ar) we build Rails Apps. Some of them need heavy computing when a request is received. In order to make the App scalable, we perform those heavy actions in background. We return a job-id and the client asks for it's state a few seconds after.
