@@ -2,9 +2,8 @@ require 'spec_helper'
 
 module AsyncRequest
   describe JobsController do
-
     routes { AsyncRequest::Engine.routes }
-    
+
     describe '#show' do
       context 'when there is no job with the given id' do
         let!(:job) { FactoryGirl.create(:async_request_job, :waiting) }

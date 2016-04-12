@@ -3,7 +3,6 @@ require 'spec_helper'
 module AsyncRequest
   describe ApplicationHelper do
     describe '.execute_async' do
-
       context 'When no worker class is passed' do
         it 'fails with ArgumentError' do
           expect { execute_async(nil, []) }.to raise_error(ArgumentError)
@@ -11,7 +10,6 @@ module AsyncRequest
       end
 
       context 'When called with valid params' do
-
         it 'creates a new job object' do
           expect { execute_async(Test, 'a') }.to change { Job.count }.by(1)
         end
