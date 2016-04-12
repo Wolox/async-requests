@@ -3,7 +3,7 @@ module AsyncRequest
   class Engine < ::Rails::Engine
     isolate_namespace AsyncRequest
 
-    initializer "async_request", before: :load_config_initializers do |app|
+    initializer "async_request", before: :load_config_initializers do |_app|
       Rails.application.routes.append do
         mount AsyncRequest::Engine, at: "/async_request"
       end
