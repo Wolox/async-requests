@@ -1,6 +1,6 @@
 module AsyncRequest
   class Job < ActiveRecord::Base
     serialize :params, Array
-    enum status: [:wating, :processing, :processed]
+    enum status: [:waiting, :processing, :processed]
   end
 end

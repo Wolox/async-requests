@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'factory_girl'
 require 'faker'
 require 'database_cleaner'
+require 'pry'
 require File.expand_path("../dummy/config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
