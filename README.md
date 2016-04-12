@@ -39,9 +39,9 @@ This project is maintained by [Matías De Santi](https://github.com/mdesanti) an
 
 ## License
 
-**WLXBluetoothDevice** is available under the MIT [license](https://raw.githubusercontent.com/mdesanti/async-requests/master/LICENSE).
+**AsyncRequest** is available under the MIT [license](https://raw.githubusercontent.com/mdesanti/async-requests/master/LICENSE).
 
-    Copyright (c) 2016 Matías De Santi <guidomb@wolox.com.ar>
+    Copyright (c) 2016 Matías De Santi <matias.desanti@wolox.com.ar>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

@@ -1,0 +1,951 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (13.2ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.1ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.9ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "modi"], ["status_code", 200], ["response", "{:a=>\"velit\", :b=>\"voluptatum\", :c=>\"iure\"}"], ["uid", "excepturi"], ["params", "---\n- dolor\n- :a: a\n"], ["created_at", "2016-04-12 00:38:32.144137"], ["updated_at", "2016-04-12 00:38:32.144137"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.0ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.0ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "iure"], ["status_code", 200], ["response", "{:a=>\"dicta\", :b=>\"sunt\", :c=>\"quaerat\"}"], ["uid", "sint"], ["params", "---\n- quas\n- :a: a\n"], ["created_at", "2016-04-12 00:39:21.622445"], ["updated_at", "2016-04-12 00:39:21.622445"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.2ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "hic"], ["status_code", 200], ["response", "{:a=>\"officia\", :b=>\"nihil\", :c=>\"dignissimos\"}"], ["uid", "illum"], ["params", "---\n- et\n- :a: a\n"], ["created_at", "2016-04-12 00:40:20.141331"], ["updated_at", "2016-04-12 00:40:20.141331"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"illum"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "illum"]]
+Completed 202 Accepted in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.7ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "ab"], ["status_code", 200], ["response", "{:a=>\"nihil\", :b=>\"et\", :c=>\"et\"}"], ["uid", "ut"], ["params", "---\n- eos\n- :a: a\n"], ["created_at", "2016-04-12 00:40:34.630709"], ["updated_at", "2016-04-12 00:40:34.630709"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"utABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "utABC"]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.9ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "consectetur"], ["status_code", 200], ["response", "{:a=>\"in\", :b=>\"ea\", :c=>\"voluptate\"}"], ["uid", "sapiente"], ["params", "---\n- vitae\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 00:47:05.233155"], ["updated_at", "2016-04-12 00:47:05.233155"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sapiente"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sapiente"]]
+Completed 202 Accepted in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "quia"], ["status_code", 200], ["response", "{:a=>\"consequuntur\", :b=>\"ea\", :c=>\"maiores\"}"], ["uid", "excepturi"], ["params", "---\n- vitae\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 00:47:05.258504"], ["updated_at", "2016-04-12 00:47:05.258504"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"excepturi"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "excepturi"]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "dolores"], ["status_code", 200], ["response", "{:a=>\"veniam\", :b=>\"repellat\", :c=>\"nam\"}"], ["uid", "beatae"], ["params", "---\n- vitae\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 00:47:05.268403"], ["updated_at", "2016-04-12 00:47:05.268403"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"beatae"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "beatae"]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "odio"], ["status_code", 200], ["response", "{:a=>\"itaque\", :b=>\"quis\", :c=>\"expedita\"}"], ["uid", "sed"], ["params", "---\n- vitae\n- :a: a\n"], ["created_at", "2016-04-12 00:47:05.276802"], ["updated_at", "2016-04-12 00:47:05.276802"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sed"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sed"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.2ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "quia"], ["status_code", 200], ["response", "{\"a\":\"aspernatur\",\"b\":\"optio\",\"c\":\"dicta\"}"], ["uid", "sapiente"], ["params", "---\n- et\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 00:47:22.939147"], ["updated_at", "2016-04-12 00:47:22.939147"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sapiente"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sapiente"]]
+Completed 202 Accepted in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "et"], ["status_code", 200], ["response", "{\"a\":\"perspiciatis\",\"b\":\"voluptatum\",\"c\":\"dicta\"}"], ["uid", "amet"], ["params", "---\n- et\n- :a: a\n"], ["created_at", "2016-04-12 00:47:22.961749"], ["updated_at", "2016-04-12 00:47:22.961749"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"amet"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "amet"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "et"], ["status_code", 200], ["response", "{\"a\":\"animi\",\"b\":\"omnis\",\"c\":\"rerum\"}"], ["uid", "ratione"], ["params", "---\n- et\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 00:47:22.973202"], ["updated_at", "2016-04-12 00:47:22.973202"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"ratione"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "ratione"]]
+Completed 0  in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "ea"], ["status_code", 200], ["response", "{\"a\":\"nemo\",\"b\":\"ea\",\"c\":\"magnam\"}"], ["uid", "voluptatem"], ["params", "---\n- et\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 00:47:22.982271"], ["updated_at", "2016-04-12 00:47:22.982271"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"voluptatem"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "voluptatem"]]
+Completed 0  in 1ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.0ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "nulla"], ["status_code", 200], ["response", "{\"a\":\"rerum\",\"b\":\"praesentium\",\"c\":\"non\"}"], ["uid", "sit"], ["params", "---\n- qui\n- :a: a\n"], ["created_at", "2016-04-12 00:48:06.822799"], ["updated_at", "2016-04-12 00:48:06.822799"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sitABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sitABC"]]
+Completed 404 Not Found in 7ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "saepe"], ["status_code", 200], ["response", "{\"a\":\"maxime\",\"b\":\"temporibus\",\"c\":\"temporibus\"}"], ["uid", "qui"], ["params", "---\n- qui\n- :a: a\n"], ["created_at", "2016-04-12 00:48:06.844049"], ["updated_at", "2016-04-12 00:48:06.844049"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"qui"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "qui"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "ex"], ["status_code", 200], ["response", "{\"a\":\"quia\",\"b\":\"repudiandae\",\"c\":\"provident\"}"], ["uid", "et"], ["params", "---\n- qui\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 00:48:06.853964"], ["updated_at", "2016-04-12 00:48:06.853964"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"et"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "et"]]
+Completed 0  in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "quae"], ["status_code", 200], ["response", "{\"a\":\"reiciendis\",\"b\":\"voluptas\",\"c\":\"ut\"}"], ["uid", "iure"], ["params", "---\n- qui\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 00:48:06.894259"], ["updated_at", "2016-04-12 00:48:06.894259"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"iure"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "iure"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "est"], ["status_code", 200], ["response", "{\"a\":\"aut\",\"b\":\"nesciunt\",\"c\":\"atque\"}"], ["uid", "dignissimos"], ["params", "---\n- qui\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 00:48:06.901885"], ["updated_at", "2016-04-12 00:48:06.901885"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"dignissimos"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "dignissimos"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.4ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "pariatur"], ["status_code", 200], ["response", "{\"a\":\"reiciendis\",\"b\":\"a\",\"c\":\"nam\"}"], ["uid", "rerum"], ["params", "---\n- et\n- :a: a\n"], ["created_at", "2016-04-12 01:02:35.985352"], ["updated_at", "2016-04-12 01:02:35.985352"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"rerumABC"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "rerumABC"]]
+Completed 404 Not Found in 8ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "aut"], ["status_code", 200], ["response", "{\"a\":\"fugiat\",\"b\":\"laboriosam\",\"c\":\"fugiat\"}"], ["uid", "assumenda"], ["params", "---\n- et\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:02:36.008645"], ["updated_at", "2016-04-12 01:02:36.008645"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"assumenda"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "assumenda"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "et"], ["status_code", 200], ["response", "{\"a\":\"eum\",\"b\":\"quia\",\"c\":\"eaque\"}"], ["uid", "quam"], ["params", "---\n- et\n- :a: a\n"], ["created_at", "2016-04-12 01:02:36.018908"], ["updated_at", "2016-04-12 01:02:36.018908"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"quam"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "quam"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "natus"], ["status_code", 200], ["response", "{\"a\":\"sit\",\"b\":\"quis\",\"c\":\"velit\"}"], ["uid", "et"], ["params", "---\n- et\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:02:36.028312"], ["updated_at", "2016-04-12 01:02:36.028312"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"et"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "et"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "blanditiis"], ["status_code", 200], ["response", "{\"a\":\"sunt\",\"b\":\"odit\",\"c\":\"sed\"}"], ["uid", "doloribus"], ["params", "---\n- et\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:02:36.038376"], ["updated_at", "2016-04-12 01:02:36.038376"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"doloribus"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "doloribus"]]
+Completed 0  in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.0ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "esse"], ["status_code", 200], ["response", "{\"a\":\"atque\",\"b\":\"cum\",\"c\":\"itaque\"}"], ["uid", "sit"], ["params", "---\n- saepe\n- :a: a\n"], ["created_at", "2016-04-12 01:02:47.261376"], ["updated_at", "2016-04-12 01:02:47.261376"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sit"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sit"]]
+Completed 202 Accepted in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "non"], ["status_code", 200], ["response", "{\"a\":\"ratione\",\"b\":\"consequatur\",\"c\":\"maiores\"}"], ["uid", "voluptas"], ["params", "---\n- saepe\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:02:47.286282"], ["updated_at", "2016-04-12 01:02:47.286282"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"voluptas"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "voluptas"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "voluptas"], ["status_code", 200], ["response", "{\"a\":\"eius\",\"b\":\"vel\",\"c\":\"dolor\"}"], ["uid", "magni"], ["params", "---\n- saepe\n- :a: a\n"], ["created_at", "2016-04-12 01:02:47.296240"], ["updated_at", "2016-04-12 01:02:47.296240"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"magniABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "magniABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "aperiam"], ["status_code", 200], ["response", "{\"a\":\"est\",\"b\":\"quis\",\"c\":\"facilis\"}"], ["uid", "excepturi"], ["params", "---\n- saepe\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:02:47.306289"], ["updated_at", "2016-04-12 01:02:47.306289"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"excepturi"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "excepturi"]]
+Completed 0  in 1ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "quidem"], ["status_code", 200], ["response", "{\"a\":\"facilis\",\"b\":\"sunt\",\"c\":\"non\"}"], ["uid", "dolores"], ["params", "---\n- saepe\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:02:47.316250"], ["updated_at", "2016-04-12 01:02:47.316250"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"dolores"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "dolores"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.0ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.1ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "dignissimos"], ["status_code", 200], ["response", "{\"a\":\"pariatur\",\"b\":\"itaque\",\"c\":\"quasi\"}"], ["uid", "quae"], ["params", "---\n- in\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:04:08.631767"], ["updated_at", "2016-04-12 01:04:08.631767"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"quae"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "quae"]]
+Completed 202 Accepted in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "vitae"], ["status_code", 200], ["response", "{\"a\":\"et\",\"b\":\"sed\",\"c\":\"et\"}"], ["uid", "odit"], ["params", "---\n- in\n- :a: a\n"], ["created_at", "2016-04-12 01:04:08.655314"], ["updated_at", "2016-04-12 01:04:08.655314"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"oditABC"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "oditABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "quis"], ["status_code", 200], ["response", "{\"a\":\"asperiores\",\"b\":\"aut\",\"c\":\"odit\"}"], ["uid", "dolore"], ["params", "---\n- in\n- :a: a\n"], ["created_at", "2016-04-12 01:04:08.666009"], ["updated_at", "2016-04-12 01:04:08.666009"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"dolore"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "dolore"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "vel"], ["status_code", 200], ["response", "{\"a\":\"itaque\",\"b\":\"occaecati\",\"c\":\"error\"}"], ["uid", "iure"], ["params", "---\n- in\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:04:08.675942"], ["updated_at", "2016-04-12 01:04:08.675942"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"iure"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "iure"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "expedita"], ["status_code", 200], ["response", "{\"a\":\"debitis\",\"b\":\"eaque\",\"c\":\"dolores\"}"], ["uid", "aut"], ["params", "---\n- in\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:04:08.685764"], ["updated_at", "2016-04-12 01:04:08.685764"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"aut"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "aut"]]
+Completed 0  in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.9ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "quam"], ["status_code", 200], ["response", "{\"a\":\"facere\",\"b\":\"tempora\",\"c\":\"rerum\"}"], ["uid", "vero"], ["params", "---\n- sit\n- :a: a\n"], ["created_at", "2016-04-12 01:04:19.359224"], ["updated_at", "2016-04-12 01:04:19.359224"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"vero"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "vero"]]
+Completed 202 Accepted in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "sunt"], ["status_code", 200], ["response", "{\"a\":\"ullam\",\"b\":\"quasi\",\"c\":\"eius\"}"], ["uid", "autem"], ["params", "---\n- sit\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:04:19.382443"], ["updated_at", "2016-04-12 01:04:19.382443"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"autem"}
+  [1m[35mAsyncRequest::Job Load (0.2ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "autem"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "nobis"], ["status_code", 200], ["response", "{\"a\":\"praesentium\",\"b\":\"atque\",\"c\":\"voluptas\"}"], ["uid", "laborum"], ["params", "---\n- sit\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:04:19.392494"], ["updated_at", "2016-04-12 01:04:19.392494"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"laborum"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "laborum"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "eum"], ["status_code", 200], ["response", "{\"a\":\"in\",\"b\":\"saepe\",\"c\":\"eaque\"}"], ["uid", "aspernatur"], ["params", "---\n- sit\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:04:19.402471"], ["updated_at", "2016-04-12 01:04:19.402471"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"aspernatur"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "aspernatur"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "aut"], ["status_code", 200], ["response", "{\"a\":\"dolores\",\"b\":\"non\",\"c\":\"consequatur\"}"], ["uid", "inventore"], ["params", "---\n- sit\n- :a: a\n"], ["created_at", "2016-04-12 01:04:19.412733"], ["updated_at", "2016-04-12 01:04:19.412733"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"inventoreABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "inventoreABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (12.4ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "libero"], ["status_code", 200], ["response", "{\"a\":\"omnis\",\"b\":\"deleniti\",\"c\":\"doloremque\"}"], ["uid", "incidunt"], ["params", "---\n- dolores\n- :a: a\n"], ["created_at", "2016-04-12 01:04:54.440688"], ["updated_at", "2016-04-12 01:04:54.440688"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"incidunt"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "incidunt"]]
+Completed 202 Accepted in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "pariatur"], ["status_code", 200], ["response", "{\"a\":\"veniam\",\"b\":\"ad\",\"c\":\"reprehenderit\"}"], ["uid", "aut"], ["params", "---\n- dolores\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:04:54.464134"], ["updated_at", "2016-04-12 01:04:54.464134"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"aut"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "aut"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "inventore"], ["status_code", 200], ["response", "{\"a\":\"qui\",\"b\":\"debitis\",\"c\":\"sed\"}"], ["uid", "sed"], ["params", "---\n- dolores\n- :a: a\n"], ["created_at", "2016-04-12 01:04:54.475188"], ["updated_at", "2016-04-12 01:04:54.475188"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sedABC"}
+  [1m[35mAsyncRequest::Job Load (0.2ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sedABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "aut"], ["status_code", 200], ["response", "{\"a\":\"necessitatibus\",\"b\":\"voluptatum\",\"c\":\"vitae\"}"], ["uid", "provident"], ["params", "---\n- dolores\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:04:54.484924"], ["updated_at", "2016-04-12 01:04:54.484924"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"provident"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "provident"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "qui"], ["status_code", 200], ["response", "{\"a\":\"cum\",\"b\":\"aliquid\",\"c\":\"omnis\"}"], ["uid", "ipsa"], ["params", "---\n- dolores\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:04:54.494611"], ["updated_at", "2016-04-12 01:04:54.494611"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"ipsa"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "ipsa"]]
+Completed 0  in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.7ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "quaerat"], ["status_code", 200], ["response", "{\"a\":\"quam\",\"b\":\"sunt\",\"c\":\"blanditiis\"}"], ["uid", "eligendi"], ["params", "---\n- cumque\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:05:05.550858"], ["updated_at", "2016-04-12 01:05:05.550858"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"eligendi"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "eligendi"]]
+Completed 0  in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "dicta"], ["status_code", 200], ["response", "{\"a\":\"harum\",\"b\":\"assumenda\",\"c\":\"corrupti\"}"], ["uid", "ducimus"], ["params", "---\n- cumque\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:05:05.573913"], ["updated_at", "2016-04-12 01:05:05.573913"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"ducimus"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "ducimus"]]
+Completed 0  in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "et"], ["status_code", 200], ["response", "{\"a\":\"ex\",\"b\":\"qui\",\"c\":\"delectus\"}"], ["uid", "quia"], ["params", "---\n- cumque\n- :a: a\n"], ["created_at", "2016-04-12 01:05:05.609652"], ["updated_at", "2016-04-12 01:05:05.609652"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"quia"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "quia"]]
+Completed 202 Accepted in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "aspernatur"], ["status_code", 200], ["response", "{\"a\":\"qui\",\"b\":\"porro\",\"c\":\"earum\"}"], ["uid", "ullam"], ["params", "---\n- cumque\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:05:05.629971"], ["updated_at", "2016-04-12 01:05:05.629971"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"ullam"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "ullam"]]
+Completed 202 Accepted in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "iste"], ["status_code", 200], ["response", "{\"a\":\"vel\",\"b\":\"maiores\",\"c\":\"voluptates\"}"], ["uid", "fugit"], ["params", "---\n- cumque\n- :a: a\n"], ["created_at", "2016-04-12 01:05:05.637114"], ["updated_at", "2016-04-12 01:05:05.637114"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"fugitABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "fugitABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (2.0ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.4ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (13.0ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "et"], ["status_code", 200], ["response", "{\"a\":\"perferendis\",\"b\":\"quia\",\"c\":\"omnis\"}"], ["uid", "saepe"], ["params", "---\n- dolore\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:05:35.140955"], ["updated_at", "2016-04-12 01:05:35.140955"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"saepe"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "saepe"]]
+Completed 202 Accepted in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "incidunt"], ["status_code", 200], ["response", "{\"a\":\"et\",\"b\":\"vero\",\"c\":\"fugit\"}"], ["uid", "iusto"], ["params", "---\n- dolore\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:05:35.166238"], ["updated_at", "2016-04-12 01:05:35.166238"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"iusto"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "iusto"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "amet"], ["status_code", 200], ["response", "{\"a\":\"dolor\",\"b\":\"ducimus\",\"c\":\"inventore\"}"], ["uid", "quos"], ["params", "---\n- dolore\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:05:35.176949"], ["updated_at", "2016-04-12 01:05:35.176949"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"quos"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "quos"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "ut"], ["status_code", 200], ["response", "{\"a\":\"fuga\",\"b\":\"unde\",\"c\":\"perferendis\"}"], ["uid", "beatae"], ["params", "---\n- dolore\n- :a: a\n"], ["created_at", "2016-04-12 01:05:35.187218"], ["updated_at", "2016-04-12 01:05:35.187218"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"beatae"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "beatae"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "perferendis"], ["status_code", 200], ["response", "{\"a\":\"quo\",\"b\":\"rerum\",\"c\":\"et\"}"], ["uid", "sit"], ["params", "---\n- dolore\n- :a: a\n"], ["created_at", "2016-04-12 01:05:35.197219"], ["updated_at", "2016-04-12 01:05:35.197219"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"sitABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "sitABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" DISABLE TRIGGER ALL
+  [1m[36m (1.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE 
+            tablename !~ '_prt_' AND 
+            tablename <> 'schema_migrations' AND 
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'dummy_test'
+  [1m[36m (11.3ms)[0m  [1mTRUNCATE TABLE "public"."async_request_jobs" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "async_request_jobs" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "dolores"], ["status_code", 200], ["response", "{\"a\":\"ratione\",\"b\":\"quasi\",\"c\":\"deleniti\"}"], ["uid", "vero"], ["params", "---\n- aut\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:05:45.823375"], ["updated_at", "2016-04-12 01:05:45.823375"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"vero"}
+  [1m[35mAsyncRequest::Job Load (0.4ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "vero"]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "voluptatum"], ["status_code", 200], ["response", "{\"a\":\"nemo\",\"b\":\"officiis\",\"c\":\"adipisci\"}"], ["uid", "et"], ["params", "---\n- aut\n- :a: a\n"], ["status", 2], ["created_at", "2016-04-12 01:05:45.845929"], ["updated_at", "2016-04-12 01:05:45.845929"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"et"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "et"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "quisquam"], ["status_code", 200], ["response", "{\"a\":\"et\",\"b\":\"voluptatibus\",\"c\":\"aliquam\"}"], ["uid", "ut"], ["params", "---\n- aut\n- :a: a\n"], ["created_at", "2016-04-12 01:05:45.857100"], ["updated_at", "2016-04-12 01:05:45.857100"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"utABC"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "utABC"]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["worker", "mollitia"], ["status_code", 200], ["response", "{\"a\":\"dolorem\",\"b\":\"voluptatem\",\"c\":\"asperiores\"}"], ["uid", "optio"], ["params", "---\n- aut\n- :a: a\n"], ["created_at", "2016-04-12 01:05:45.867614"], ["updated_at", "2016-04-12 01:05:45.867614"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"optio"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "optio"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "async_request_jobs" ("worker", "status_code", "response", "uid", "params", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["worker", "qui"], ["status_code", 200], ["response", "{\"a\":\"dicta\",\"b\":\"impedit\",\"c\":\"voluptatum\"}"], ["uid", "commodi"], ["params", "---\n- aut\n- :a: a\n"], ["status", 1], ["created_at", "2016-04-12 01:05:45.877233"], ["updated_at", "2016-04-12 01:05:45.877233"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+Processing by AsyncRequest::JobsController#show as HTML
+  Parameters: {"id"=>"commodi"}
+  [1m[35mAsyncRequest::Job Load (0.3ms)[0m  SELECT  "async_request_jobs".* FROM "async_request_jobs" WHERE "async_request_jobs"."uid" = $1 LIMIT 1  [["uid", "commodi"]]
+Completed 202 Accepted in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK

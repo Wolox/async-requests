@@ -48,13 +48,16 @@ GEM
     coderay (1.1.1)
     concurrent-ruby (1.0.1)
     connection_pool (2.2.0)
-    diff-lcs (1.1.3)
+    database_cleaner (1.4.1)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (4.7.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -105,17 +108,23 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (11.1.2)
     redis (3.2.2)
-    rspec-core (2.12.2)
-    rspec-expectations (2.12.1)
-      diff-lcs (~> 1.1.3)
-    rspec-mocks (2.12.2)
-    rspec-rails (2.12.2)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 2.12.0)
-      rspec-expectations (~> 2.12.0)
-      rspec-mocks (~> 2.12.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     sidekiq (4.1.1)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -138,10 +147,12 @@ PLATFORMS
 
 DEPENDENCIES
   async_request!
+  database_cleaner
   factory_girl_rails (~> 4.0)
+  faker
   pg
   pry
-  rspec-rails (~> 2.12.2)
+  rspec-rails
 
 BUNDLED WITH
    1.11.2

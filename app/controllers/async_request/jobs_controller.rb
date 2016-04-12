@@ -13,7 +13,7 @@ module AsyncRequest
     end
 
     def render_finished_job(job)
-      render json: job.response, status: job.status
+      render json: JSON.parse(job.response), status: job.status_code
     end
   end
 end

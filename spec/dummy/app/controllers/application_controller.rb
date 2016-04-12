@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def test
+  def async
     id = execute_async(Test, 'a')
     render json: { id: id, url: async_request.job_url(id) }, status: 202
   end
