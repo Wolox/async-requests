@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Matias De Santi"]
   s.email       = ["matias.desanti@wolox.com.ar"]
   s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of AsyncRequest."
-  s.description = "TODO: Description of AsyncRequest."
+  s.summary     = 'async_request gives us the possibility of handling these type of requests in a simple way.'
+  s.description = "At [Wolox](http://www.wolox.com.ar) we build Rails Apps. Some of them need heavy computing when a request is received. In order to make the App scalable, we perform those heavy actions in background. We return a job-id and the client asks for it's state a few seconds after. `async_request` gives us the possibility of handling these type of requests in a simple way."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
