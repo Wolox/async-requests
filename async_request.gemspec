@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = AsyncRequest::VERSION
   s.authors     = ["Matias De Santi"]
   s.email       = ["matias.desanti@wolox.com.ar"]
-  s.homepage    = "https://github.com/mdesanti/async-requests"
+  s.homepage    = "https://github.com/Wolox/async-requests"
   s.summary     = 'async_request gives us the possibility of handling these type of requests in a simple way.'
   s.description = "At [Wolox](http://www.wolox.com.ar) we build Rails Apps. Some of them need heavy computing when a request is received. In order to make the App scalable, we perform those heavy actions in background. We return a job-id and the client asks for it's state a few seconds after. `async_request` gives us the possibility of handling these type of requests in a simple way."
   s.license     = "MIT"
