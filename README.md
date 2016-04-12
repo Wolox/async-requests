@@ -29,6 +29,8 @@ This will enqueue a Sidekiq task that will call `MyComputeHeavyWorker.new.execut
 
 The client can then make a GET request to the returned URL. If the job's completed, it will get a response code and a json body. Otherwise, a `202` code will be returned
 
+`MyComputeHeavyWorker` must return an array with two components. The first one must be the status code, the second one must be the response that will be sent to the client. Take into account that the response must respond to `to_json`.
+
 
 ## About ##
 
