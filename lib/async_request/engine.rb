@@ -3,6 +3,8 @@ module AsyncRequest
   class Engine < ::Rails::Engine
     isolate_namespace AsyncRequest
 
+    config.autoload_paths << File.expand_path("../helpers/**/*", __FILE__)
+
     initializer "async_request", before: :load_config_initializers do |app|
       Rails.application.routes.append do
         mount AsyncRequest::Engine, at: "/async_request"
