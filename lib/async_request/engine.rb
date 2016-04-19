@@ -3,8 +3,6 @@ module AsyncRequest
   class Engine < ::Rails::Engine
     isolate_namespace AsyncRequest
 
-    config.autoload_paths << File.expand_path("../helpers/**/*", __FILE__)
-
     initializer "async_request", before: :load_config_initializers do |app|
       Rails.application.routes.append do
         mount AsyncRequest::Engine, at: "/async_request"
@@ -15,8 +13,6 @@ module AsyncRequest
           Rails.application.config.paths["db/migrate"] << expanded_path
         end
       end
-
-      ActionController::Base.send :include, AsyncRequest::Engine.helpers
     end
 
     config.generators do |g|
