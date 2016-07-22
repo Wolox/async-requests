@@ -10,6 +10,8 @@ At [Wolox](http://www.wolox.com.ar) we build Rails Apps. Some of them need heavy
 
 Add `gem 'async_request'` to your gemfile
 
+Run `rails g async_request`
+
 ### Usage
 
 Simply call `async_request(your_worker, *args)` like this:
