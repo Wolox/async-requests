@@ -1,4 +1,5 @@
 require 'sidekiq'
+
 module AsyncRequest
   class Engine < ::Rails::Engine
     isolate_namespace AsyncRequest

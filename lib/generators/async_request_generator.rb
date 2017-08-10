@@ -1,6 +1,5 @@
 require 'rails/generators/base'
 
-
 class AsyncRequestGenerator < Rails::Generators::Base
   source_root File.expand_path("../../templates", __FILE__)
 
