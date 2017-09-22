@@ -1,3 +1,3 @@
 AsyncRequest::Engine.routes.draw do
-  resources :jobs, only: [:show]
+  resource :job, only: [:show]
 end

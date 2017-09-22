@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 4.2"
   s.add_dependency "sidekiq", "~> 4.0"
+  s.add_dependency 'jwt', '~> 1.5.6'
 
   s.add_development_dependency "pg"
   s.add_development_dependency "pry"
