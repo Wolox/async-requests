@@ -1,9 +1,8 @@
 class WorkerWithErrors
-  def execute(params)
+  def execute(_params)
     raise SomeError
   end
 
   class SomeError < StandardError
-
   end
 end

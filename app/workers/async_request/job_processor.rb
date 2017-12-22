@@ -9,7 +9,7 @@ module AsyncRequest
         status, response = job.worker.constantize.new.execute(*job.params)
         job.successfully_processed!(response, status)
       rescue StandardError
-        job.finished_with_errors
+        job.finished_with_errors!
       end
     end
   end

@@ -4,9 +4,9 @@ module AsyncRequest
   class JobsController < ActionController::Base
     def show
       return render_invalid_token unless valid_token?
-      job = Job.find_by_id(token[:job_id])
-      return head :not_found unless job.present?
-      job.finished? ? render_finished_job(job) : render_pending(job)
+      job = Job.find_by(id: token[:job_id])
+      return head :not_found if job.blank?
+      job.finished? ? render_finished_job(job) : render_pending
     end
 
     private
@@ -21,12 +21,11 @@ module AsyncRequest
 
     def decode_token
       HashWithIndifferentAccess.new(
-        JWT.decode(
-          request.headers['Job_Authorization'].split(' ').last,
-          Rails.application.secrets.secret_key_base
-        ).first
+        JsonWebToken.decode(
+          request.headers[AsyncRequest.config[:request_header_key]].split(' ').last
+        )
       )
-    rescue
+    rescue StandardError
       {}
     end
 
@@ -34,7 +33,7 @@ module AsyncRequest
       render json: { errors: [{ message: 'Invalid token' }] }, status: :bad_request
     end
 
-    def render_pending(_job)
+    def render_pending
       head :accepted
     end
 

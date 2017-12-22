@@ -1,16 +1,12 @@
 module AsyncRequest
-  class Job < ActiveRecord::Base
+  class Job < ActiveRecord::Base # rubocop:disable Rails/ApplicationRecord
     serialize :params, Array
     enum status: { waiting: 0, processing: 1, processed: 2, failed: 3 }
-
-    def self.find_by_jwt_token(jwt_job_id)
-      find(AsyncRequest::JsonWebToken.decode(jwt_job_id)[0]['job_id'])
-    end
 
     def self.execute_async(worker_class, *params)
       raise ArgumentError if worker_class.nil?
       job = create_and_enqueue(worker_class, *params)
-      AsyncRequest::JsonWebToken.encode(job.id)
+      [job, JsonWebToken.encode(job.id)]
     end
 
     def self.create_and_enqueue(worker_class, *params)
@@ -34,7 +30,7 @@ module AsyncRequest
       processed? || failed?
     end
 
-    def finished_with_errors
+    def finished_with_errors!
       update_attributes(status: :failed, status_code: 500)
     end
   end

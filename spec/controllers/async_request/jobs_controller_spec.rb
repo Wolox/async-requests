@@ -9,12 +9,12 @@ describe AsyncRequest::JobsController do
     let(:job_token) { AsyncRequest::JsonWebToken.encode(job_id) }
     let(:status) { :waiting }
 
-    before { request.headers['Job_Authorization'] = "Bearer #{job_token}" }
+    before { request.headers['X-JOB-AUTHORIZATION'] = "Bearer #{job_token}" }
 
     context 'when there is no job with the given id' do
       let(:job_id) { 1000 }
 
-      it 'returns a bad request' do
+      it 'returns status not found' do
         get :show
         expect(response).to have_http_status :not_found
       end
@@ -25,14 +25,14 @@ describe AsyncRequest::JobsController do
         AsyncRequest::JsonWebToken.encode(create(:async_request_job).id, Time.current - 1.day)
       end
 
-      it 'returns a bad request' do
+      it 'returns status bad request' do
         get :show
         expect(response).to have_http_status :bad_request
       end
     end
 
     context 'when the job exists but it is in a waiting status' do
-      it 'returns 202' do
+      it 'returns status accepted' do
         get :show
         expect(response).to have_http_status :accepted
       end
@@ -41,7 +41,7 @@ describe AsyncRequest::JobsController do
     context 'when the job exists but it is in a processing status' do
       let(:status) { :processing }
 
-      it 'returns 202' do
+      it 'returns status accepted' do
         get :show
         expect(response).to have_http_status :accepted
       end

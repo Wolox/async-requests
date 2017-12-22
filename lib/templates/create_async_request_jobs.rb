@@ -1,5 +1,5 @@
 class CreateAsyncRequestJobs < ActiveRecord::Migration
-  def change
+  def change # rubocop:disable Metrics/MethodLength
     create_table :async_request_jobs do |t|
       t.string :worker
       t.integer :status
