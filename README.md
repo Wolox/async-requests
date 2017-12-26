@@ -16,20 +16,20 @@ Run `rails g async_request`
 
 ### Usage
 
-This gem provides a  that will call an `execute` a method of any class you give and will store the response in the database. In order to do this, we provide a model named `AsyncRequest::Job` that will handle the queue of the worker with the params.
+This gem provides a [Sidekiq worker](https://github.com/Wolox/async-requests/blob/master/app/workers/async_request/job_processor.rb) that will call an instance method named `execute` of any class you give and will store the response in the database. In order to do this, we provide a model named `AsyncRequest::Job` that will handle the queue of the worker with the params.
 
 * IMPORTANT: The response of the worker will store the response as a string and the status code as an integer.
 
 ``` ruby
 class SomeController < ApplicationController
   def my_compute_heavy_endpoint_option_1
-    _job, token = AsyncRequest::Job.execute_async(MyComputeHeavyWorker, { some: 'args' }, 'another arg')
-    render json: { token: token, url: async_request.job_url }, status: :accepted
+    job = AsyncRequest::Job.create_and_enqueue(MyComputeHeavyWorker, { some: 'args' }, 'another arg')
+    render json: { token: job.token, url: async_request.job_url }, status: :accepted
   end
 
   def my_compute_heavy_endpoint_option_2
-    _job, token = AsyncRequest::Job.execute_async(MyComputeHeavyWorker, { some: 'args' }, 'another arg')
-    render json: { token: token }, status: :accepted, location: async_request.job_url
+    job = AsyncRequest::Job.create_and_enqueue(MyComputeHeavyWorker, { some: 'args' }, 'another arg')
+    render json: { token: job.token }, status: :accepted, location: async_request.job_url
   end
 end
 
@@ -41,9 +41,9 @@ class MyComputeHeavyWorker
 end
 ```
 
-This will enqueue a [Sidekiq worker](https://github.com/Wolox/async-requests/blob/master/app/workers/async_request/job_processor.rb) that will call `MyComputeHeavyWorker.new.execute` with the args passed as parameters to `execute_async`.
+This will enqueue a `JobProcessor` worker that will call `MyComputeHeavyWorker.new.execute` with the args passed as parameters to `create_and_enqueue`.
 
-The client can then make a GET request to the returned URL sending the `token` in a `X-JOB-AUTHORIZATION` header (configurable). If the job's completed, it will get a response code and a json body. Otherwise, a `202 (accepted)` code will be returned.
+The client can then make a GET request to the returned URL sending the `token` in a `X-JOB-AUTHORIZATION` header (configurable). If the job's completed, it will get a response code and a json body. Otherwise, a HTTP status code `accepted (202)` will be returned.
 
 `MyComputeHeavyWorker` must return an array with two components. The first one has be the status code (number or Rails symbol), the second one has be the response that will be sent to the client. Take into account that the response must be a string because it will be stored in the database.
 
@@ -58,14 +58,14 @@ AsyncRequest.configure do |config|
   config.request_header_key = 'X-JOB-AUTHORIZATION' # This is the default
   config.encode_key = Rails.application.secrets.secret_key_base
   config.decode_key = Rails.application.secrets.secret_key_base
-  config.token_expiration = Time.zone.now + 1.day
+  config.token_expiration = 1.day
 end
 
 ```
 
 ## About ##
 
-This project is maintained by [Matías De Santi](https://github.com/mdesanti) and it was written by [Wolox](http://www.wolox.com.ar).
+This project is maintained by [Alejandro Bezdjian](https://github.com/alebian) and [Alan Halatian](https://github.com/alanhala) and it was written by [Wolox](http://www.wolox.com.ar).
 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
 

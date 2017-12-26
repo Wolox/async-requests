@@ -12,7 +12,7 @@ module AsyncRequest
     private
 
     def valid_token?
-      token[:job_id].present? && token[:expires_in] > Time.zone.now
+      token[:job_id].present? && Time.zone.now.to_i < token[:expires_in]
     end
 
     def token
@@ -41,7 +41,7 @@ module AsyncRequest
       render json: {
         status: job.status,
         response: {
-          status_code: job.status_code, body: JSON.parse(job.response)
+          status_code: job.status_code, body: job.response
         }
       }, status: :ok
     end

@@ -7,8 +7,8 @@ require 'async_request/version'
 Gem::Specification.new do |s|
   s.name        = 'async_request'
   s.version     = AsyncRequest::VERSION
-  s.authors     = ['Matias De Santi']
-  s.email       = ['matias.desanti@wolox.com.ar']
+  s.authors     = ['Matias De Santi', 'Alejandro Bezdjian', 'Alan Halatian']
+  s.email       = ['matias.desanti@wolox.com.ar', 'alejandro.bezdjian@wolox.com.ar', 'alan.halatian@wolox.com.ar']
   s.homepage    = 'https://github.com/Wolox/async-requests'
   s.summary     = 'Perform background jobs and ask for the result in a simple way.'
   s.description = 'Perform background jobs and ask for the result in a simple way.'

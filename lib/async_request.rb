@@ -1,4 +1,3 @@
-require 'async_request/constants'
 require 'async_request/engine'
 
 module AsyncRequest
@@ -8,7 +7,7 @@ module AsyncRequest
     sign_algorithm: 'HS256',
     encode_key: 'CHANGE_ME_IN_THE_INITIALIZER_FILE',
     decode_key: 'CHANGE_ME_IN_THE_INITIALIZER_FILE',
-    token_expiration: 1_829_484_000,
+    token_expiration: 86_400,
     request_header_key: 'X-JOB-AUTHORIZATION'
   }
 

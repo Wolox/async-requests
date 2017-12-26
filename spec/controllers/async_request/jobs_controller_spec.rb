@@ -22,7 +22,7 @@ describe AsyncRequest::JobsController do
 
     context 'when receiving an expired token' do
       let(:job_token) do
-        AsyncRequest::JsonWebToken.encode(create(:async_request_job).id, Time.current - 1.day)
+        AsyncRequest::JsonWebToken.encode(create(:async_request_job).id, (1.day * -1).to_i)
       end
 
       it 'returns status bad request' do
@@ -59,7 +59,7 @@ describe AsyncRequest::JobsController do
         get :show
         controller_response = {
           'status' => 'processed',
-          'response' => { 'status_code' => job.status_code, 'body' => JSON.parse(job.response) }
+          'response' => { 'status_code' => job.status_code, 'body' => job.response }
         }
         expect(response_body).to eq(controller_response)
       end
@@ -77,7 +77,7 @@ describe AsyncRequest::JobsController do
         get :show
         controller_response = {
           'status' => 'failed',
-          'response' => { 'status_code' => job.status_code, 'body' => JSON.parse(job.response) }
+          'response' => { 'status_code' => job.status_code, 'body' => job.response }
         }
         expect(response_body).to eq(controller_response)
       end

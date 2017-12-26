@@ -3,19 +3,18 @@ module AsyncRequest
     serialize :params, Array
     enum status: { waiting: 0, processing: 1, processed: 2, failed: 3 }
 
-    def self.execute_async(worker_class, *params)
-      raise ArgumentError if worker_class.nil?
-      job = create_and_enqueue(worker_class, *params)
-      [job, JsonWebToken.encode(job.id)]
-    end
-
     def self.create_and_enqueue(worker_class, *params)
+      raise ArgumentError if worker_class.nil?
       create(
         worker: worker_class,
         params: params,
         status: statuses[:waiting],
         uid: SecureRandom.uuid
       ).tap { |job| JobProcessor.perform_async(job.id) }
+    end
+
+    def token
+      @token ||= JsonWebToken.encode(id)
     end
 
     def successfully_processed!(response, status_code)
@@ -37,7 +36,7 @@ module AsyncRequest
     private
 
     def map_status_code(status_code)
-      return Constants::STATUS_CODE_MAPPER[status_code] if status_code.is_a?(Symbol)
+      return Rack::Utils::SYMBOL_TO_STATUS_CODE[status_code] if status_code.is_a?(Symbol)
       status_code.to_i
     end
   end
