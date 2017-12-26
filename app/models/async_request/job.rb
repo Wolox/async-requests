@@ -21,8 +21,8 @@ module AsyncRequest
     def successfully_processed!(response, status_code)
       update_attributes!(
         status: :processed,
-        status_code: status_code,
-        response: response.to_json
+        status_code: map_status_code(status_code),
+        response: response.to_s
       )
     end
 
@@ -32,6 +32,13 @@ module AsyncRequest
 
     def finished_with_errors!
       update_attributes(status: :failed, status_code: 500)
+    end
+
+    private
+
+    def map_status_code(status_code)
+      return Constants::STATUS_CODE_MAPPER[status_code] if status_code.is_a?(Symbol)
+      status_code.to_i
     end
   end
 end

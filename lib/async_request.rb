@@ -1,3 +1,4 @@
+require 'async_request/constants'
 require 'async_request/engine'
 
 module AsyncRequest
