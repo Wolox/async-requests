@@ -25,12 +25,21 @@ module AsyncRequest
           end
         end
 
-        context 'when the worker returns a symbol' do
+        context 'when the worker returns a symbol as status code' do
           let(:worker) { WorkerWithSymbol }
 
           it 'saves the worker status code' do
             described_class.new.perform(job.id)
             expect(job.reload.status_code).to eq 200
+          end
+        end
+
+        context 'when the worker returns nil as the response' do
+          let(:worker) { WorkerReturningNil }
+
+          it 'saves the worker status code' do
+            described_class.new.perform(job.id)
+            expect(job.reload.response).to eq ''
           end
         end
 
