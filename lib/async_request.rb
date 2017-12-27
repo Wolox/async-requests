@@ -5,8 +5,8 @@ module AsyncRequest
 
   @config = {
     sign_algorithm: 'HS256',
-    encode_key: 'CHANGE_ME_IN_THE_INITIALIZER_FILE',
-    decode_key: 'CHANGE_ME_IN_THE_INITIALIZER_FILE',
+    encode_key: nil,
+    decode_key: nil,
     token_expiration: 86_400,
     request_header_key: 'X-JOB-AUTHORIZATION'
   }

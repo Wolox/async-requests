@@ -16,7 +16,7 @@ Run `rails g async_request`
 
 ### Usage
 
-This gem provides a [Sidekiq worker](https://github.com/Wolox/async-requests/blob/master/app/workers/async_request/job_processor.rb) that will call an instance method named `execute` of any class you give and will store the response in the database. In order to do this, we provide a model named `AsyncRequest::Job` that will handle the queue of the worker with the params.
+This gem provides a [Sidekiq worker](https://github.com/Wolox/async-requests/blob/master/app/workers/async_request/job_processor.rb) that will call an instance method named `execute` of any given class and store the response in the database. In order to do this, we provide a model named `AsyncRequest::Job` that will handle the queue of the worker with the params.
 
 * IMPORTANT: The response of the worker will store the response as a string and the status code as an integer.
 
@@ -62,6 +62,10 @@ AsyncRequest.configure do |config|
 end
 
 ```
+
+## Migration
+
+If you were using an older version of the gem and would like to migrate, check our [migration guide](https://raw.githubusercontent.com/mdesanti/async-requests/master/MIGRATION.md)
 
 ## About ##
 
