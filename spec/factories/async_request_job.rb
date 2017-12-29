@@ -19,5 +19,11 @@ module AsyncRequest
     trait :processed do
       status Job.statuses[:processed]
     end
+
+    trait :failed do
+      status Job.statuses[:failed]
+      status_code 500
+      response { {} }
+    end
   end
 end

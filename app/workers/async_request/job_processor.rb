@@ -5,12 +5,12 @@ module AsyncRequest
     def perform(id)
       job = Job.find(id)
       job.processing!
-      status, response = job.worker.constantize.new.execute(*job.params)
-      job.update_attributes!(
-        status: Job.statuses[:processed],
-        status_code: status,
-        response: response.to_json
-      )
+      begin
+        status, response = job.worker.constantize.new.execute(*job.params)
+        job.successfully_processed!(response, status)
+      rescue StandardError
+        job.finished_with_errors!
+      end
     end
   end
 end

@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require(*Rails.groups)
-require "async_request"
+require 'async_request'
 
 module Dummy
   class Application < Rails::Application
@@ -23,4 +23,3 @@ module Dummy
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
-

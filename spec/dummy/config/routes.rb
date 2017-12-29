@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get :async, to: 'application#test'
-  get :normal, to: 'application#normal'
+  post :async_option_1, to: 'dummy#async_option_1'
+  post :async_option_2, to: 'dummy#async_option_2'
 end

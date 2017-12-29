@@ -7,6 +7,8 @@ AllCops:
   Exclude:
     - spec/support/spec_helper.rb
     - spec/rails_helper.rb
+    - spec/dummy/config/**/*
+    - spec/dummy/db/**/*
 
 Documentation:
   Enabled: false
@@ -15,4 +17,11 @@ LineLength:
   Max: 99
 
 HasAndBelongsToMany:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# For RSpec tests
+Metrics/BlockLength:
   Enabled: false
