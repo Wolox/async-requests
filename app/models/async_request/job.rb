@@ -39,7 +39,8 @@ module AsyncRequest
       Rails.logger.info("Processing failed for job with id=#{id}")
       Rails.logger.info(error.message)
       Rails.logger.info(error.backtrace.inspect)
-      update_attributes(status: :failed, status_code: 500, response: error.message)
+      update_attributes!(status: :failed, status_code: 500,
+                         response: { error: error.message }.to_json)
     end
 
     private
