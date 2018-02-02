@@ -4,7 +4,7 @@ PATH
     async_request (1.0.0)
       jwt (~> 2.1)
       rails (>= 4.2)
-      sidekiq (~> 4.0)
+      sidekiq (>= 4.2, < 6)
 
 GEM
   remote: https://rubygems.org/
@@ -118,7 +118,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
     rake (11.1.2)
-    redis (3.3.5)
+    redis (4.0.1)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -144,11 +144,11 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
-    sidekiq (4.2.10)
+    sidekiq (5.0.5)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
-      redis (~> 3.2, >= 3.2.1)
+      redis (>= 3.3.4, < 5)
     simplecov (0.11.2)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -183,4 +183,4 @@ DEPENDENCIES
   rubocop (~> 0.52)
 
 BUNDLED WITH
-   1.15.3
+   1.16.1
