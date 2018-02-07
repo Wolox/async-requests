@@ -1,4 +1,4 @@
-require "async_request/engine"
+require 'async_request/engine'
 
 module AsyncRequest
 end

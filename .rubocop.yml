@@ -7,6 +7,8 @@ AllCops:
   Exclude:
     - spec/support/spec_helper.rb
     - spec/rails_helper.rb
+    - spec/dummy/**/*
+    - lib/templates/**/*
 
 Documentation:
   Enabled: false
