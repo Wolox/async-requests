@@ -8,7 +8,9 @@ module AsyncRequest
     encode_key: nil,
     decode_key: nil,
     token_expiration: 86_400,
-    request_header_key: 'X-JOB-AUTHORIZATION'
+    request_header_key: 'X-JOB-AUTHORIZATION',
+    queue: 'default',
+    retry: false
   }
 
   def self.configure
@@ -34,6 +36,15 @@ module AsyncRequest
 
   def self.request_header_key=(request_header_key)
     @config[:request_header_key] = request_header_key
+  end
+
+  def self.queue=(queue)
+    @config[:queue] = queue
+  end
+
+  def self.retry=(retry_times)
+    raise ArgumentError unless [true, false].include?(retry_times) || retry_times.is_a?(Integer)
+    @config[:retry] = retry_times
   end
 
   def self.config
