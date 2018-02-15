@@ -1,6 +1,7 @@
 module AsyncRequest
   class JobProcessor
     include Sidekiq::Worker
+    sidekiq_options queue: AsyncRequest.config[:queue], retry: AsyncRequest.config[:retry]
 
     def perform(id)
       job = Job.find(id)
