@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    async_request (0.0.6)
+    async_request (0.0.7)
       rails (>= 4.2)
       sidekiq (~> 4.0)
 
