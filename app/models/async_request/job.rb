@@ -18,6 +18,7 @@ module AsyncRequest
     end
 
     def successfully_processed!(response, status_code)
+      Rails.logger.info("Processing finished successfully for job with id=#{id}")
       update_attributes!(
         status: :processed,
         status_code: map_status_code(status_code),
@@ -25,12 +26,21 @@ module AsyncRequest
       )
     end
 
+    def processing!
+      Rails.logger.info("Processing job with id=#{id}")
+      super
+    end
+
     def finished?
       processed? || failed?
     end
 
-    def finished_with_errors!
-      update_attributes(status: :failed, status_code: 500)
+    def finished_with_errors!(error)
+      Rails.logger.info("Processing failed for job with id=#{id}")
+      Rails.logger.info(error.message)
+      Rails.logger.info(error.backtrace.inspect)
+      update_attributes!(status: :failed, status_code: 500,
+                         response: { error: error.message }.to_json)
     end
 
     private
