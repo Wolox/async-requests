@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '>= 4.2'
-  s.add_dependency 'sidekiq', '>= 4.2', '< 6'
+  s.add_dependency 'sidekiq', '>= 4.0', '< 6'
   s.add_dependency 'jwt', '~> 2.1'
 
   s.add_development_dependency 'pg'
