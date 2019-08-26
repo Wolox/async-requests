@@ -22,7 +22,8 @@ module AsyncRequest
       update_attributes!(
         status: :processed,
         status_code: map_status_code(status_code),
-        response: response.to_s
+        response: response.to_s,
+        ended_at: Time.zone.now
       )
     end
 
