@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    async_request (1.0.0)
+    async_request (1.1.0)
       jwt (~> 2.1)
       rails (>= 4.2)
       sidekiq (>= 4.0, < 6)

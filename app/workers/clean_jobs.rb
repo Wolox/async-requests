@@ -9,7 +9,6 @@ class CleanJobs
   private
 
   def jobs
-    @jobs ||= AsyncRequest::Job
-              .where('ended_at < ?', AsyncRequest.config[:jobs_expiration].hours.ago)
+    AsyncRequest::Job.where('ended_at < ?', AsyncRequest.config[:jobs_expiration].hours.ago)
   end
 end
