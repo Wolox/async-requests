@@ -26,4 +26,3 @@ FactoryGirl.define do
     response { {} }
   end
 end
-

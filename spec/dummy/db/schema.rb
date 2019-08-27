@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170815023204) do
     t.text     "response"
     t.string   "uid"
     t.text     "params"
+    t.datetime "ended_at"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

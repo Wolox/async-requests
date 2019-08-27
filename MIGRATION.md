@@ -23,7 +23,10 @@ AsyncRequest.configure do |config|
   config.sign_algorithm = 'HS256' # This is the default, valid algorithms: HS256 and RS256
   config.request_header_key = 'X-JOB-AUTHORIZATION' # This is the default
   config.encode_key = Rails.application.secrets.secret_key_base # This is needed or you will get an error
-  config.decode_key = Rails.application.secrets.secret_key_base # This is needed or you will get an error
+  config.decode_key = Rails.application.secrets.secret_key_base  # This is needed or you will get an error
+  config.clean_jobs_cron = Rails.application.secrets.clean_jobs_cron # Optional, default: every day
+  config.jobs_expiration = Rails.application.secrets.jobs_expiration # Optional, default: one day
+  config.clean_jobs = Rails.application.secrets.clean_jobs # Optional, default: true
   config.token_expiration = 1.day # This is the default
 end
 ```

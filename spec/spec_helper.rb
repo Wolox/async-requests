@@ -4,6 +4,7 @@ require 'factory_girl'
 require 'faker'
 require 'database_cleaner'
 require 'pry'
+require 'byebug'
 require File.expand_path('../dummy/config/environment', __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
