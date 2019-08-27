@@ -13,6 +13,7 @@ describe CleanJobs do
 
       before do
         expired_job
+        not_expired_job
       end
 
       it 'should deleted the expired job' do
