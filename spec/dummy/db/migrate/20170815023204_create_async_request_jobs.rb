@@ -7,6 +7,7 @@ class CreateAsyncRequestJobs < ActiveRecord::Migration
       t.text :response
       t.string :uid
       t.text :params
+      t.datetime :ended_at
 
       t.timestamps null: false
     end

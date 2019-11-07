@@ -10,6 +10,9 @@ module AsyncRequest
     token_expiration: 86_400,
     request_header_key: 'X-JOB-AUTHORIZATION',
     queue: 'default',
+    jobs_expiration: 24,
+    clean_jobs_cron: '0 0 * * *',
+    clean_jobs: true,
     retry: false
   }
 
@@ -32,6 +35,18 @@ module AsyncRequest
 
   def self.token_expiration=(token_expiration)
     @config[:token_expiration] = token_expiration
+  end
+
+  def self.jobs_expiration=(jobs_expiration)
+    @config[:jobs_expiration] = jobs_expiration
+  end
+
+  def self.clean_jobs_cron=(clean_jobs_cron)
+    @config[:clean_jobs_cron] = clean_jobs_cron
+  end
+
+  def self.clean_jobs=(clean_jobs)
+    @config[:clean_jobs] = clean_jobs
   end
 
   def self.request_header_key=(request_header_key)
