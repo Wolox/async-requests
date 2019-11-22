@@ -1,6 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
-require 'factory_girl'
+require 'factory_bot'
 require 'faker'
 require 'database_cleaner'
 require 'pry'
@@ -21,10 +21,10 @@ CodeClimate::TestReporter.start
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   config.before(:all) do
-    FactoryGirl.reload
+    FactoryBot.reload
   end
 
   config.expect_with :rspec do |c|
