@@ -1,4 +1,4 @@
-class CreateAsyncRequestJobs < ActiveRecord::Migration
+class CreateAsyncRequestJobs < ActiveRecord::Migration[5.1]
   def change
     create_table :async_request_jobs do |t|
       t.string :worker

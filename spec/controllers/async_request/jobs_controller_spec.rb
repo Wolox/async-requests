@@ -57,10 +57,9 @@ describe AsyncRequest::JobsController do
 
       it 'returns as body job\'s status code and response' do
         get :show
-        controller_response = {
-          'status' => 'processed',
-          'response' => { 'status_code' => job.status_code, 'body' => job.response }
-        }
+        controller_response = { 'status' => 'processed',
+                                'response' => { 'status_code' => job.status_code,
+                                                'body' => job.response } }
         expect(response_body).to eq(controller_response)
       end
     end
@@ -75,10 +74,9 @@ describe AsyncRequest::JobsController do
 
       it 'returns as body job\'s status code and response' do
         get :show
-        controller_response = {
-          'status' => 'failed',
-          'response' => { 'status_code' => job.status_code, 'body' => job.response }
-        }
+        controller_response = { 'status' => 'failed',
+                                'response' => { 'status_code' => job.status_code,
+                                                'body' => job.response } }
         expect(response_body).to eq(controller_response)
       end
     end

@@ -17,16 +17,18 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
   s.test_files = Dir['spec/**/*']
 
-  s.add_dependency 'rails', '>= 4.2'
-  s.add_dependency 'sidekiq', '>= 4.0', '< 6'
   s.add_dependency 'jwt', '~> 2.1'
+  s.add_dependency 'rails', '>= 6'
+  s.add_dependency 'sidekiq', '>= 4.0', '< 6'
+  s.add_dependency 'sprockets', '~> 3.0'
 
+  s.add_development_dependency 'factory_bot_rails'
+  s.add_development_dependency 'faker'
   s.add_development_dependency 'pg'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'factory_girl_rails', '~> 4.0'
-  s.add_development_dependency 'faker'
   s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'codeclimate-test-reporter'
   s.add_development_dependency 'rubocop', '~> 0.52'
+  s.add_development_dependency 'rubocop-rspec'
 end

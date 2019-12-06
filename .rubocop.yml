@@ -1,4 +1,5 @@
 # This is the configuration used to check the rubocop source code.
+require: rubocop-rspec
 
 Rails:
   Enabled: true
@@ -10,18 +11,21 @@ AllCops:
     - spec/dummy/config/**/*
     - spec/dummy/db/**/*
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
-LineLength:
+Metrics/LineLength:
   Max: 99
-
-HasAndBelongsToMany:
-  Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 # For RSpec tests
 Metrics/BlockLength:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/PredicateMatcher:
   Enabled: false
