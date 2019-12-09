@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe DummyController, type: :controller do
+describe DummyController do
   describe '.async_option_1' do
     subject(:request) { post :async_option_1 }
 
