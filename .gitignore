@@ -9,3 +9,7 @@ spec/dummy/.sass-cache
 pec/dummy/log/*
 .idea/*
 *.gem
+
+# Ignore coveralls results
+coverage/*
+/coverage/*

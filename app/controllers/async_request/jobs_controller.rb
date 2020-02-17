@@ -4,8 +4,10 @@ module AsyncRequest
   class JobsController < ActionController::Base
     def show
       return render_invalid_token unless valid_token?
+
       job = Job.find_by(id: token[:job_id])
       return head :not_found if job.blank?
+
       job.finished? ? render_finished_job(job) : render_pending
     end
 
